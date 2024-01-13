@@ -7,38 +7,10 @@
 ```html
 <p>some text content</p> <!-- Tag -->
 ```
-
+<a>
 -------------------------------------------------
 
-## Element Table
-
-Elements are containers for content.
-
-| **Element** | **Description**                                                                                                                                                                                                                                                                     |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<style>`   | Contains style information for a document or part of a document. It contains CSS, which is applied to the contents of the document containing this element.                                                                                                                         |
-| `<title>`   | Defines the document's title that is shown in a browser's title bar or a page's tab. It only contains text; tags within the element are ignored.                                                                                                                                    |
-| `<link>`    | Specifies relationships between the current document and an external resource. This element is most commonly used to link to CSS but is also used to establish site icons (both "favicon" style icons and icons for the home screen and apps on mobile devices) among other things. |
-| `<meta>`    | Represents metadata that cannot be represented by other HTML meta-related elements, like `<base>`, `<link>`, `<script>`, `<style>` and `<title>`.                                                                                                                                   |
-| `<strong>`  | The `<strong>` element makes the text bold. It also semantically marks the text as important.                                                                                                                                                                                       |
-| `<em>`      | The `<em>`element (em-emphasis)makes text italic. Also, semantically places emphasis on the text.                                                                                                                                                                                   |
-| `<i>`       | Italic Text                                                                                                                                                                                                                                                                         |
-| `<b>`       | Bold Text                                                                                                                                                                                                                                                                           |
-| `<mark>`    | The HTML `<mark>` element defines text that should be marked or highlighted                                                                                                                                                                                                         |
-| `<small>`   | Smaller Text                                                                                                                                                                                                                                                                        |
-| `<del>`     | Deleted Text                                                                                                                                                                                                                                                                        |
-| `<ins>`     | Inserted Text                                                                                                                                                                                                                                                                       |
-| `<sub>`     | Subscript Text                                                                                                                                                                                                                                                                      |
-| `<sup>`     | Superscript Text                                                                                                                                                                                                                                                                    |
-| `<hr>`      | Horizontal Line                                                                                                                                                                                                                                                                     |
-| `<var>`     | Variable Element                                                                                                                                                                                                                                                                    |
-| `<a>`       | Link Element                                                                                                                                                                                                                                                                        |
-|             |                                                                                                                                                                                                                                                                                     |
-|             |                                                                                                                                                                                                                                                                                     |
-
----------------------------------------------------------------------------------------------------
-
-## Reserved Characters, Quotes & Other Escape Characters
+**Reserved Characters, Quotes & Other Escape Characters**
 
 | Character | Escape Syntax |
 |:---------:|:-------------:|
@@ -79,7 +51,7 @@ The doctypes for older versions of HTML were a bit more complicated. For example
 
 ---------------------------------------------------------
 
-**Viewing the HTML files in the browser - New Way** 
+**Viewing the HTML files in the browser - New Way**
 
 1. Ubuntu - Open terminal in the html file location, type `google-chrome index.html`
 2. MacOS - In the directory, type `open./index.html`

@@ -10,7 +10,7 @@
 
 **Universal Selector** will select elements of any type, hence the name "universal", and the syntax for it is a simple asterisk `*`. In the below example, every element would have the `color : purple` style applied to it. 
 
-**Type Selector** will select all elements of the given element type, and the syntax is juust the name of the element.
+**Type Selector** will select all elements of the given element type, and the syntax is just the name of the element.
 
 **Class Selectors** will select all elements with the given class, which is just an attribute youplace on an HTML Element. Here's how you add a class to an HTML tag and select it in CSS.
 
@@ -183,5 +183,77 @@ Explicitly stating a `height` and `width` prevents this from happening, as s
 ### Tips
 
 - Always use `box-sizing: border-box;` property in the **Universal Selector** so that the height and width properties applied to descending elements remain what they they are.
+- An inline element cannot contain a block-level element!
+
+**Resources**
+1. [Scrim Interactive on inline and block](https://scrimba.com/scrim/co5024997a7e46c232d9abe55)
 
 -------------------------------------------------------------------------------------------
+
+## Flex Box
+
+Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define.
+
+- A **flex container** is any element that has `display: flex` on it. A flex item is any element that lives directly inside of a flex container.
+
+![Flexbox-illustration](https://cdn.statically.io/gh/TheOdinProject/curriculum/8c0402439e1b0a9a156731bdab4ea64162688dab/foundations/html_css/flexbox/imgs/03.png)
+
+- Any element can be both a flex container and a flex item. Said another way, you can also put `display: flex` on a flex item and then use flexbox to arrange its children.
+
+![Flexbox-iluustration-2](https://cdn.statically.io/gh/TheOdinProject/curriculum/495704c6eb6bf33bc927534f231533a82b27b2ac/html_css/v2/foundations/flexbox/imgs/04.png)
+
+![Flex Direction](https://internetingishard.netlify.app/flex-direction-axes-b30e85.d1bca75a.png)
+
+![Flex Direction Types](https://internetingishard.netlify.app/flex-direction-reverse-532d8f.d1f2fbd3.png)
+
+**Flex Order**
+![Flex Order](https://internetingishard.netlify.app/flex-direction-vs-order-021cee.7a3e129a.png)
+
+**Flexible Items**
+![Flexible Items](https://internetingishard.netlify.app/flexible-items-cfe7a3.e3584961.png)
+
+- Use `display: flex;` to create a flex container.
+- Use `justify-content` to define the horizontal alignment of items.
+- Use `align-items` to define the vertical alignment of items.
+- Use `flex-direction` if you need columns instead of rows.
+- Use the `row-reverse` or`column-reverse` values to flip item order.
+- Use `order` to customize the order of individual elements.
+- Use `align-self` to vertically align individual items.
+- Use `flex` to create flexible boxes that can stretch and shrink.
+
+**Flex Shorthand**
+
+The **flex** declaration is actually a shorthand for 3 properties that you can set on a flex item.  
+**Eg :** `flex` is actually shorthand for `flex-grow`, `flex-shrink` and `flex-basis`.
+
+``` css
+div {
+  flex: 1;
+}
+```
+
+In the above screenshot, `flex:1` equates to `flex-grow: 1`, `flex-shrink: 1` and `flex-basis: 0`
+
+### Growing & Shrinking 
+
+#### Flex-Grow
+
+`flex-grow` expects a single number as its value, and that number is used as the flex-item’s “growth factor”. When we applied `flex: 1` to every `div` inside our container, we were telling every `div` to grow the same amount. 
+
+#### Flex-Shrink
+
+`flex-shrink` is similar to `flex-grow`, but sets the “shrink factor” of a flex item. `flex-shrink` only ends up being applied if the size of all flex items is larger than their parent container. For example, if our 3 divs from above had a width declaration like: `width: 100px`, and **.flex-container** was smaller than 300px, our divs would have to shrink to fit.
+
+#### Flex-Basis
+
+`flex-basis` sets the initial size of a flex item, so any sort of flex-growing or flex-shrinking starts from that baseline size. The shorthand value defaults to `flex-basis: 0%`
+
+> Authors are encouraged to control flexibility using the flex shorthand rather than with its longhand properties directly, as the shorthand correctly resets any unspecified components to accommodate common uses.
+
+More on flex [here](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
+
+---------------------------------------
+
+
+
+
