@@ -26,6 +26,7 @@ div.container {
 
 .content {
     border: 5px solid pink ;
+    padding: 15px;
 }
 
 .block-list {
