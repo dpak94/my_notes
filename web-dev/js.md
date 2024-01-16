@@ -48,10 +48,10 @@ let user = 'John', age = 25, message = 'Hello'
 > **Eg:** `var message = 'Ciao';`
 
 > [!IMPORTANT]
->1. The name must only contain letters, digits or symbols `$` and `_`.
+>1. The name must only contain letters, digits or symbols **$** and **_**.
 >2. The first character must not be digit.
 >3. Case matters. **apple** and **APPLE** are differnet variables.
->4. Variable cannot be drawn from [reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)
+>4. Do not draw variables from [reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words)
 
 > When the name contains multiple words, <b>camelCase</b> is commonly used. That is: words go one after another, each word except first starting with a capital letter: **myVeryLongName**
 
@@ -60,7 +60,7 @@ let user = 'John', age = 25, message = 'Hello'
 
 `const myBirthday = '18.04.1982`;`
 
-Any attempt to reassign value woul result in error.
+Any attempt to reassign value would result in error.
 
 1. We generally use upper case for constants that we "hard-coded" i.e.,  when the value is known prior to execution and directly written into the code.
 **Eg :** birthday, planet count etc.
