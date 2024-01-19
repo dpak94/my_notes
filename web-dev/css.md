@@ -186,6 +186,7 @@ Explicitly stating a `height` and `width` prevents this from happening, as s
 - An inline element cannot contain a block-level element!
 
 **Resources**
+
 1. [Scrim Interactive on inline and block](https://scrimba.com/scrim/co5024997a7e46c232d9abe55)
 
 -------------------------------------------------------------------------------------------
@@ -226,7 +227,7 @@ Flexbox is a way to arrange items into rows or columns. These items will flex (i
 The **flex** declaration is actually a shorthand for 3 properties that you can set on a flex item.  
 **Eg :** `flex` is actually shorthand for `flex-grow`, `flex-shrink` and `flex-basis`.
 
-``` css
+```css
 div {
   flex: 1;
 }
@@ -234,7 +235,7 @@ div {
 
 In the above screenshot, `flex:1` equates to `flex-grow: 1`, `flex-shrink: 1` and `flex-basis: 0`
 
-### Growing & Shrinking 
+### Growing & Shrinking
 
 #### Flex-Grow
 
@@ -253,7 +254,3 @@ In the above screenshot, `flex:1` equates to `flex-grow: 1`, `flex-shrink: 1` an
 More on flex [here](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
 
 ---------------------------------------
-
-
-
-
