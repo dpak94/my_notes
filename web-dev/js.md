@@ -262,8 +262,6 @@ switch (day) {
 
 - Prefer to turn on Strict Mode while coding.
 
-
-
 ## Functions
 
 ```js
@@ -286,3 +284,221 @@ console.log(appleJuice);
 // 5 6
 // Juice with 5 appleas and 6 oranges
 ```
+
+**Function Declaration and Expression**
+
+```js
+// JavaScript Function Declaration
+function calcAge(birthYear) {
+  return 2024 - birthYear;
+}
+const age = calcAge(1994);
+
+// Function Expression
+const calcAge2 = function (birthYear) {
+  return 2024 - birthYear;
+};
+const age2 = calcAge2(1997);
+console.log(
+age, age2); // 30 27
+```
+
+**Arrow Function**
+
+```js
+// Arrow Function
+// Like Lambda Function in Python. Easy to write a function
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2024 - birthYear;
+  const retirement = 65 - age;
+  // return retirement;
+  return `Hello ${firstName}, you will retire in ${retirement} years.`;
+};
+
+console.log(yearsUntilRetirement(1994, "Jackson"));
+// Hello Jackson, you will retire in 35 years.
+```
+
+**Functions Calling Other Functions**
+
+```js
+// Function(s) calling other function(s)
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function FruitProcessor(apples, oranges) {
+  applePieces = cutFruitPieces(apples);
+  orangePieces = cutFruitPieces(oranges);
+  const juice = `Juice made with ${applePieces} pieces from ${oranges} oranges & ${orangePieces} pieces from ${apples} apples`;
+  return juice;
+}
+
+console.log(FruitProcessor(3, 3));
+// Juice made with 12 pieces from 3 oranges & 12 pieces from 3 apples
+```
+
+## Arrays
+
+- [Array MDN Docs Reference]([Array - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+```js
+// Arrays
+const friends = ["Mike", "Ike", "Jake", "Pike", "Kyle"];
+console.log(friends[1]); // Ike
+const years = new Array(1991, 1992, 1993, 1997);
+console.log(years[2]); // 1993
+console.log(friends[friends.length - 1]); // Access last element - Kyle
+// Index starts from 0 (same as Python)
+friends[2] = "Jim"; // Replacing an element in array
+console.log(friends[2]); // Jim
+const nome = "Tyler";
+// Adding a variable as an array member
+friends[5] = nome;
+console.log(friends); // (6) ['Mike', 'Ike', 'Jim', 'Pike', 'Kyle', 'Tyler']
+console.log(friends.length); // Length of the array - 6
+```
+
+**Array Methods**
+
+```js
+// Array Methods
+const friends = ["Michael", "John", "Charles", "William", "George"];
+
+friends.push("Jake"); // Adds elements to the end of the array
+console.log(friends); // (6) ['Michael', 'John', 'Charles', 'William', 'George', 'Jake']
+
+friends.unshift("Richard"); // Adds elements at the beginning of the array
+console.log(friends); // (7) ['Richard', 'Michael', 'John', 'Charles', 'William', 'George', 'Jake']
+
+friends.pop(); // Removes the last element
+console.log(friends); // ['Richard', 'Michael', 'John', 'Charles', 'William', 'George']
+
+friends.shift(); // Removes the first element
+console.log(friends); //(5) ['Michael', 'John', 'Charles', 'William', 'George']
+
+console.log(friends.indexOf("Charles")); // Gives the index of element => 2
+console.log(friends.indexOf("William")); // Gives the index of element => 3
+// ES6 Method to confirm the existence of element
+console.log(friends.includes('William')); // Modern method
+```
+
+## Objects
+
+- SImilar to dictionaries in Python
+
+```js
+// Objects (Dictionaries)
+const myBio = {
+  firstName: "Dpak",
+  lastName: "94",
+  age: 29,
+  job: "Engineer",
+  hobbies: ["gaming", "movies", "book reading"],
+};
+// Accessing the contents of the objects
+console.log(myBio["firstName"]); // Dpak
+console.log(myBio.age); //29
+myBio.city = "Hyderabad";
+console.log(myBio["city"]);
+
+const query = prompt("What do you want to know about the user?");
+console.log(myBio[query]);
+
+if (myBio[query]) {
+  console.log(myBio[query]);
+} else {
+  console.log("Please enter valid data query");
+}
+```
+
+```js
+// Best Friend Challenge. Print the No. of Jonas's friends and his best friend.
+bioData = {
+  name: "Jonas",
+  friends: ["Mike", "Pike", "Richard", "Wilhelm"],
+  age: 24,
+  location: "Deutschland",
+};
+
+console.log(
+  `${bioData.name} has ${bioData["friends"].length} friends. His best friend is ${bioData.friends[0]}.`
+);
+// Jonas has 4 friends. His best friend is Mike.
+```
+
+### Object Methods
+
+```js
+// this keyword - used to indicate the curent object
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  job: "Engineer",
+  friends: ["Rob", "Tom", "Dan", "Ulrich"],
+  hasDriversLicense: false,
+  birthYear: 1991,
+  ageCalc: function () {
+    this.age = 2024 - this.birthYear;
+    return this.age;
+    // "this" replacing the current object the element is a member of.
+  },
+};
+console.log(jonas.ageCalc()); // 33 Use dot notation to access the function output i.e age
+console.log(jonas.age); // 33 The age variable in the ageCalc function
+
+// Challenge
+// Jonas is a 46 year old teacher.....
+
+getSumm = function () {
+  return `${jonas.firstName} is a ${jonas.ageCalc()} years old programmer. He ${
+    this.hasDriversLicense ? `has` : `does not have`
+  } a Driver's License.`;
+};
+console.log(getSumm()); 
+// Jonas is a 33 years old programmer. He does not have a Driver's License.
+```
+
+## Loops
+
+### for loop
+
+```js
+const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  "Engineer",
+  420,
+  ["Rob", "Tom", "Dan", "Ulrich"],
+];
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+  console.log(jonas[i], typeof jonas[i]);
+  types.push(typeof jonas[i]);
+}
+console.log(`New types array : ${types}`); //Outputs the new array.
+```
+
+```js
+// Nested Loops
+const players = ["Mark", "Peter", "Thomas"];
+const sports = ["Cricket", "Wrestling", "Soccer"];
+
+for (let player = 0; player < players.length; player++) {
+  for (let sport = 0; sport < sports.length; sport++) {
+    console.log(`${players[player]} plays ${sports[sport]}. `);
+  }
+}
+```
+
+```js
+// While Loop
+let rep = 1;
+while (rep <= 10) {
+  console.log(`While : Running instance ${rep}`);
+  rep++;
+}
+```
+
+-------------------------------------------------------------------------------
